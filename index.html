@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panna College Code Library</title>
-    <link rel="stylesheet" href="assets/CSS/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -12,10 +12,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
     <header class="header">
-      <img src="./assets/img/PannaCollege Logo.png" alt="Panna College Logo" />
+      <a class="logo" href=""
+        ><img
+          class="animate__heartBeat"
+          src="./assets/img/PannaCollege Logo.png"
+          alt="Panna College Logo"
+      /></a>
       <nav class="nav">
         <a href="https://dhammadictionary.org/" target="_blank"
           >Dhamma Dictionary</a
@@ -44,9 +53,28 @@
         </ul>
       </aside>
       <section class="display-content">
-        <button><i class="close-btn fa-solid fa-circle-xmark"></i></button>
+        <button>
+          <i class="close-btn fa-solid fa-circle-xmark"></i>
+        </button>
       </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <small>Made with <span id="hearts">&hearts;</span> by Zin KO</small>
+
+      <a
+        href="https://apps.apple.com/us/app/tipitaka-pali/id1543874006"
+        target="_blank"
+        >တိပိဋက App</a
+      >
+      <a href="https://www.accesstoinsight.org/" target="_blank"
+        >Access To Insight</a
+      >
+      <a href="https://www.dhammadownload.com/index.htm" target="_blank"
+        >Dhamma Download</a
+      >
+      <a href="https://www.tipitaka.org/webapp" target="_blank"
+        >Pali Tipitaka App</a
+      >
+    </footer>
   </body>
 </html>
