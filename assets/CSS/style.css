@@ -3,6 +3,7 @@
   --font-color: #444444;
   --hover-font-color: #000000;
   --border-color: rgb(39, 197, 39);
+  --content-page-bk: #f4f4f4;
 }
 
 * {
@@ -61,7 +62,7 @@ body {
 main {
   grid-row: 2 / 3;
   display: grid;
-  grid-template-columns: 1fr 3fr; /* 1/4 for aside and 3/4 for main content */
+  grid-template-columns: auto 3fr; /* 1/4 for aside and 3/4 for main content */
   gap: 20px; /* Space between the aside and main section */
   padding: 20px;
 }
@@ -69,16 +70,31 @@ main {
 /* Styles for aside section (content-page) */
 .content-page {
   grid-column: 1 / 2;
-  background-color: #f4f4f4;
-  padding: 20px;
+  background-color: var(--content-page-bk);
+  padding: 20px 35px;
   border-right: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.content-page ul li {
+  list-style: none;
+  padding: 10px;
+  border-bottom: 2px solid var(--content-page-bk);
+}
+
+.content-page ul li:hover {
+  border-bottom: 2px solid var(--border-color);
+  scale: 1.15;
+  cursor: pointer;
+  transition-duration: 500ms;
+  transition-property: all;
 }
 
 /* Styles for main section (display-content) */
 .display-content {
   grid-column: 2 / 3;
-  background-color: #fff;
   padding: 20px;
+  background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
