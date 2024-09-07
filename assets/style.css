@@ -3,3 +3,61 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Apply basic styling to the page */
+body {
+  /* margin: 0; */
+  font-family: Arial, sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, main content, footer */
+  min-height: 100vh; /* Ensure the body takes up the full viewport height */
+}
+
+/* Header styles */
+.header {
+  grid-row: 1 / 2;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+/* Navigation styles inside header */
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Grid layout for the main content */
+main {
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* 1/4 for aside and 3/4 for main content */
+  gap: 20px; /* Space between the aside and main section */
+  padding: 20px;
+}
+
+/* Styles for aside section (content-page) */
+.content-page {
+  grid-column: 1 / 2;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+/* Styles for main section (display-content) */
+.display-content {
+  grid-column: 2 / 3;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styles */
+.footer {
+  grid-row: 3 / 4;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
