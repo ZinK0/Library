@@ -42,11 +42,34 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadModule() {
     // object.keys will return keys array of dirStructure [Module_01,Module_02]
     Object.keys(dirStructures).forEach((module) => {
-      //   const moduleList = document.createElement("ul");
+      //   moduleList.classList.add("module-lists");
       const moduleName = document.createElement("li");
-      moduleName.textContent = module;
+      moduleName.innerText = module;
+      moduleName.addEventListener("click", () => {
+        toggleModule(module, moduleName);
+      });
       moduleList.appendChild(moduleName);
     });
+  }
+
+  function toggleModule(module, moduleName) {
+    if (moduleName.classList.contains("active")) {
+    } else {
+      console.log(module);
+      const projectFolders = dirStructures[module];
+
+      moduleName.classList.add("active");
+      const projectList = document.createElement("ul");
+      projectList.classList.add("project-lists");
+
+      Object.keys(projectFolders).forEach((project) => {
+        console.log(project);
+        const projectName = document.createElement("li");
+        projectName.innerText = project;
+        projectList.appendChild(projectName);
+      });
+      moduleName.insertAdjacentElement("afterend", projectList);
+    }
   }
 
   loadModule();
