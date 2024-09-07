@@ -4,6 +4,7 @@
   --hover-font-color: #000000;
   --border-color: rgb(39, 197, 39);
   --content-page-bk: #f4f4f4;
+  --display-content-bk: #fff;
 }
 
 * {
@@ -64,7 +65,7 @@ main {
   display: grid;
   grid-template-columns: auto 3fr; /* 1/4 for aside and 3/4 for main content */
   gap: 20px; /* Space between the aside and main section */
-  padding: 20px;
+  padding: 40px 30px;
 }
 
 /* Styles for aside section (content-page) */
@@ -94,8 +95,29 @@ main {
 .display-content {
   grid-column: 2 / 3;
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--display-content-bk);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.display-content button {
+  border: none;
+}
+
+.display-content .close-btn {
+  font-size: 40px;
+  align-items: end;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.display-content .close-btn:hover {
+  color: red;
+  transition-duration: 500ms;
+  scale: 1.1;
 }
 
 /* Footer styles */
