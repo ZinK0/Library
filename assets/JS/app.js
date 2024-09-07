@@ -59,7 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleModule(module, moduleName) {
     if (moduleName.classList.contains("active")) {
+      toggler(moduleName);
     } else {
+      closeAllModule();
       const projectFolders = dirStructures[module];
 
       //add toggled state
@@ -84,23 +86,53 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function toggleFiles(module, project, projectName) {
-    const fileFolders = dirStructures[module][project];
-    //   console.log(fileFolders);
-    const fileList = document.createElement("ul");
-    fileList.classList.add("project-files");
+    if (projectName.classList.contains("active")) {
+      toggler(projectName);
+    } else {
+      closeAllProject();
+      const fileFolders = dirStructures[module][project];
+      //   console.log(fileFolders);
+      projectName.classList.add("active");
+      const fileList = document.createElement("ul");
+      fileList.classList.add("project-files");
 
-    fileFolders.forEach((file) => {
-      const fileName = document.createElement("li");
-      fileName.innerText = removeExtension(file);
-      fileList.appendChild(fileName);
-    });
+      fileFolders.forEach((file) => {
+        const fileName = document.createElement("li");
+        fileName.innerText = removeExtension(file);
+        fileList.appendChild(fileName);
+      });
 
-    // we need to append the ul>li list to toggled Project
-    projectName.insertAdjacentElement("afterend", fileList);
+      // we need to append the ul>li list to toggled Project
+      projectName.insertAdjacentElement("afterend", fileList);
+    }
   }
 
+  // this function will remove the file extension using split the string method
   function removeExtension(fileName) {
     return fileName.split(".").slice(0, -1).join("."); // Remove file extension
+  }
+
+  // this function will open and close the modules, projects
+  function toggler(activeElement) {
+    activeElement.classList.remove("active");
+    activeElement.nextElementSibling.remove();
+  }
+
+  function closeAllModule() {
+    // check all the active and close the next element
+    const openedModules = document.querySelectorAll("#module-lists .active");
+    openedModules.forEach((openedModule) => {
+      openedModule.classList.remove("active");
+      openedModule.nextElementSibling.remove();
+    });
+  }
+
+  function closeAllProject() {
+    const openedProjects = document.querySelectorAll(".project-lists .active");
+    openedProjects.forEach((openedProject) => {
+      openedProject.classList.remove("active");
+      openedProject.nextElementSibling.remove();
+    });
   }
 
   loadModule();
