@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function loadModule() {
+    // closeDisplayContent();
     // object.keys will return keys array of dirStructure [Module_01,Module_02]
     Object.keys(dirStructures).forEach((module) => {
       console.log("Module => ", module);
@@ -125,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       openedModule.classList.remove("active");
       openedModule.nextElementSibling.remove();
     });
+    closeDisplayContent();
   }
 
   function closeAllProject() {
@@ -133,6 +135,11 @@ document.addEventListener("DOMContentLoaded", () => {
       openedProject.classList.remove("active");
       openedProject.nextElementSibling.remove();
     });
+    closeDisplayContent();
+  }
+
+  function closeDisplayContent() {
+    displayArea.remove();
   }
 
   loadModule();
