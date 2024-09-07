@@ -16,6 +16,20 @@
   color: var(--font-color);
 }
 
+.pb10 {
+  padding-bottom: 10px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.dpflex-downcap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Apply basic styling to the page */
 body {
   /* margin: 0; */
@@ -79,18 +93,37 @@ main {
   border-radius: 8px;
 }
 
-.content-page ul li {
+.content-page #module-lists li {
   list-style: none;
-  padding: 10px;
+  padding-bottom: 10px;
   border-bottom: 2px solid var(--content-page-bk);
 }
 
-.content-page ul li:hover {
+.content-page #module-lists li:hover {
   border-bottom: 2px solid var(--border-color);
   scale: 1.15;
   cursor: pointer;
   transition-duration: 500ms;
   transition-property: all;
+}
+
+.content-page .project-lists {
+  margin-left: 10px;
+  /* background-color: var(--display-content-bk); */
+}
+
+.content-page .project-lists li {
+  color: rgb(189, 23, 139);
+  font-size: 12px;
+  padding: 5px 0;
+  border-bottom: none;
+}
+
+.content-page .project-files li {
+  color: green;
+  font-size: 10px;
+  margin-left: 10px;
+  border-bottom: none;
 }
 
 /* Styles for main section (display-content) */

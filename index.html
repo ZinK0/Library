@@ -44,15 +44,29 @@
     </header>
     <main>
       <aside class="content-page">
-        <ul>
+        <ul id="module-lists">
           <li>Module 01</li>
-          <li>Module 02</li>
-          <li>Module 03</li>
-          <li>Module 04</li>
-          <li>Module 05</li>
+          <ul class="project-lists">
+            <li>HTML</li>
+            <ul class="project-files">
+              <li>Lesson</li>
+              <li>Recording</li>
+              <li>Quiz</li>
+              <li>Readme</li>
+            </ul>
+            <li>Attributes</li>
+            <li>CSS_Selectors</li>
+            <li>Box_Model</li>
+            <li>CSS_Positioning</li>
+            <li>Git_Guide</li>
+          </ul>
+          <li class="pb10 mt10">Module 02</li>
+          <li class="pb10">Module 03</li>
+          <li class="pb10">Module 04</li>
+          <li class="pb10">Module 05</li>
         </ul>
       </aside>
-      <section class="display-content">
+      <section id="display-area" class="display-content">
         <button>
           <i class="close-btn fa-solid fa-circle-xmark"></i>
         </button>
@@ -77,4 +91,5 @@
       >
     </footer>
   </body>
+  <script src="./assets/js/app.js"></script>
 </html>
