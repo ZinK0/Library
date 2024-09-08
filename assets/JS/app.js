@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const moduleList = document.querySelector("#module-lists");
   const displayArea = document.querySelector("#display-area");
+  const displayContent = document.querySelector(".display-content");
+  const closeBtn = document.querySelector(".close-btn");
   const dirStructures = {
     Module_01: {
       HTML: ["index.html", "recording.html", "quiz.html", "README.md"],
@@ -40,16 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function loadModule() {
-    // closeDisplayContent();
+    closeDisplayContent();
     // object.keys will return keys array of dirStructure [Module_01,Module_02]
     Object.keys(dirStructures).forEach((module) => {
-      console.log("Module => ", module);
+      // console.log("Module => ", module);
 
       //   moduleList.classList.add("module-lists");
       const moduleName = document.createElement("li");
       moduleName.innerText = module;
 
       moduleName.addEventListener("click", () => {
+        closeDisplayContent();
         toggleModule(module, moduleName);
       });
 
@@ -75,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         projectName.innerText = project;
 
         projectName.addEventListener("click", () => {
+          closeDisplayContent();
           toggleFiles(module, project, projectName);
         });
 
@@ -102,8 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
         fileName.innerText = removeExtension(file);
 
         fileName.addEventListener("click", () => {
+          closeDisplayContent();
           loadFiles(module, project, file);
-          console.log(module, project, file);
+          // console.log(module, project, file);
         });
         fileList.appendChild(fileName);
       });
@@ -114,12 +119,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function loadFiles(module, project, file) {
+    // create section for iframe parent container
+    // const frameContainer = document.createElement('section');
+    // const frameContainer.id = 'display-area';
+    // const frameContainer.classList.add('display-content');
+
+    // create iframe for the file
     const iframe = document.createElement("iframe");
     const filePath = `./assets/module_units/${module}/${project}/${file}`;
     iframe.src = filePath;
 
-    displayArea.appendChild(iframe);
-    console.log(iframe);
+    displayContent.appendChild(iframe);
+    displayArea.appendChild(displayContent);
+    // console.log(iframe);
   }
 
   // this function will remove the file extension using split the string method
@@ -153,8 +165,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function closeDisplayContent() {
-    displayArea.remove();
+    if (displayArea.firstElementChild) {
+      displayArea.firstElementChild.remove();
+    }
   }
 
   loadModule();
+  closeBtn.addEventListener("click", closeDisplayContent);
 });

@@ -33,7 +33,7 @@
 /* Apply basic styling to the page */
 body {
   /* margin: 0; */
-  font-size: 16px;
+  font-size: 18px;
   font-family: "Nunito", sans-serif;
   display: grid;
   grid-template-rows: auto 1fr auto; /* Header, main content, footer */
@@ -114,14 +114,14 @@ main {
 
 .content-page .project-lists li {
   color: rgb(189, 23, 139);
-  font-size: 12px;
+  font-size: 16px;
   padding: 5px 0;
   border-bottom: none;
 }
 
 .content-page .project-files li {
   color: green;
-  font-size: 10px;
+  font-size: 14px;
   margin-left: 10px;
   border-bottom: none;
 }
