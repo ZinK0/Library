@@ -100,12 +100,26 @@ document.addEventListener("DOMContentLoaded", () => {
       fileFolders.forEach((file) => {
         const fileName = document.createElement("li");
         fileName.innerText = removeExtension(file);
+
+        fileName.addEventListener("click", () => {
+          loadFiles(module, project, file);
+          console.log(module, project, file);
+        });
         fileList.appendChild(fileName);
       });
 
       // we need to append the ul>li list to toggled Project
       projectName.insertAdjacentElement("afterend", fileList);
     }
+  }
+
+  function loadFiles(module, project, file) {
+    const iframe = document.createElement("iframe");
+    const filePath = `./assets/module_units/${module}/${project}/${file}`;
+    iframe.src = filePath;
+
+    displayArea.appendChild(iframe);
+    console.log(iframe);
   }
 
   // this function will remove the file extension using split the string method
