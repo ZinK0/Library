@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "README.md",
       ],
       Git_Guide: ["index.html", "recording.html", "quiz.html", "README.md"],
+      Challenge: ["index.html", "recording.html", "quiz.html", "README.md"],
+      Project: ["index.html", "recording.html", "quiz.html", "README.md"],
     },
     Module_02: {
       Wireframing: ["index.html", "recording.html", "quiz.html", "README.md"],
@@ -149,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     iframeContainer.appendChild(closeBtn);
     displayArea.appendChild(iframeContainer);
 
-    console.log(displayContent.lastElementChild);
+    // console.log(displayContent.lastElementChild);
     closeBtn.addEventListener("click", closeDisplayContent);
   }
 
