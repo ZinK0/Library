@@ -40,6 +40,64 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       CSS_Variables: ["index.html", "recording.html", "quiz.html", "README.md"],
     },
+    Module_03: {
+      Conditional_Statements: [
+        "index.html",
+        "recording.html",
+        "quiz.html",
+        "README.md",
+      ],
+      Iteration: ["index.html", "recording.html", "quiz.html", "README.md"],
+      Scope: ["index.html", "recording.html", "quiz.html", "README.md"],
+      Object_This: ["index.html", "recording.html", "quiz.html", "README.md"],
+      Git_Guide: ["index.html", "recording.html", "quiz.html", "README.md"],
+    },
+    Module_04: {
+      Create_Append: ["index.html", "recording.html", "quiz.html", "README.md"],
+      Event_Listeners: [
+        "index.html",
+        "recording.html",
+        "quiz.html",
+        "README.md",
+      ],
+      Timers_Intervals: [
+        "index.html",
+        "recording.html",
+        "quiz.html",
+        "README.md",
+      ],
+      Data_Attributes: [
+        "index.html",
+        "recording.html",
+        "quiz.html",
+        "README.md",
+      ],
+      Local_Storage: ["index.html", "recording.html", "quiz.html", "README.md"],
+      Git_Guide: ["index.html", "recording.html", "quiz.html", "README.md"],
+    },
+    Module_05: {
+      Click_Events: ["index.html", "recording.html", "quiz.html", "README.md"],
+      Event_Delegation: [
+        "index.html",
+        "recording.html",
+        "quiz.html",
+        "README.md",
+      ],
+      Bootstrap_Layout: [
+        "index.html",
+        "recording.html",
+        "quiz.html",
+        "README.md",
+      ],
+      Bootstrap_Utilities: [
+        "index.html",
+        "recording.html",
+        "quiz.html",
+        "README.md",
+      ],
+      jQuery_UI: ["index.html", "recording.html", "quiz.html", "README.md"],
+      Git_Guide: ["index.html", "recording.html", "quiz.html", "README.md"],
+    },
   };
 
   function loadModule() {
