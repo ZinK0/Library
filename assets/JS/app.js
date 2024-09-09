@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const moduleList = document.querySelector("#module-lists");
   const displayArea = document.querySelector("#display-area");
   const displayContent = document.querySelector(".display-content");
-  const closeBtn = document.querySelector(".close-btn");
   const dirStructures = {
     Module_01: {
       HTML: ["index.html", "recording.html", "quiz.html", "README.md"],
@@ -119,19 +118,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function loadFiles(module, project, file) {
-    // create section for iframe parent container
-    // const frameContainer = document.createElement('section');
-    // const frameContainer.id = 'display-area';
-    // const frameContainer.classList.add('display-content');
+    // closeDisplayContent();
 
+    // create section for iframe parent container
+    const iframeContainer = document.createElement("div");
+    iframeContainer.classList.add("display-content");
+
+    // create close button
+    const closeBtn = document.createElement("button");
+    const closeBtni = document.createElement("i");
+    closeBtni.classList.add("close-btn", "fa-solid", "fa-circle-xmark");
+    closeBtn.appendChild(closeBtni);
     // create iframe for the file
+    // displayContent.innerHTML = "";
+    // clear last append iframe
+    // if (displayContent.lastElementChild.classList.contains("opened")) {
+    //   let openedFile = document.querySelector(".opened");
+    //   console.log(openedFile);
+
+    //   openedFile.remove();
+    // }
+
+    // Append file to displayarea
     const iframe = document.createElement("iframe");
     const filePath = `./assets/module_units/${module}/${project}/${file}`;
     iframe.src = filePath;
+    iframe.classList.add("opened");
 
-    displayContent.appendChild(iframe);
-    displayArea.appendChild(displayContent);
-    // console.log(iframe);
+    iframeContainer.appendChild(iframe);
+    iframeContainer.appendChild(closeBtn);
+    displayArea.appendChild(iframeContainer);
+
+    console.log(displayContent.lastElementChild);
+    closeBtn.addEventListener("click", closeDisplayContent);
   }
 
   // this function will remove the file extension using split the string method
@@ -171,5 +190,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   loadModule();
-  closeBtn.addEventListener("click", closeDisplayContent);
 });
